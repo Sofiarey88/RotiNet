@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RotiNet.ViewModels"
+             x:Class="RotiNet.View.Clientes.AddEditClienteView"
+             Title="Agregar/Editar Cliente">
+    <ContentPage.BindingContext>
+        <viewmodels:AddEditClienteViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="10">
+        <Label Text="Agregar/Editar Cliente" FontSize="Header" HorizontalOptions="Center" />
+
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="*,*">
+            <Label Text="Nombre:" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="End"/>
+            <Entry Text="{Binding Cliente.Nombre}" Grid.Row="0" Grid.Column="1" Placeholder="Ingrese el nombre del cliente" />
+
+            <Label Text="Apellido:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="End"/>
+            <Entry Text="{Binding Cliente.Apellido}" Grid.Row="1" Grid.Column="1" Placeholder="Ingrese el apellido del cliente" />
+
+            <Label Text="Dirección:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="End"/>
+            <Entry Text="{Binding Cliente.Direccion}" Grid.Row="2" Grid.Column="1" Placeholder="Ingrese la dirección del cliente" />
+
+            <Label Text="Email:" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="End"/>
+            <Entry Text="{Binding Cliente.Email}" Grid.Row="3" Grid.Column="1" Placeholder="Ingrese el email del cliente" />
+
+            <Label Text="Teléfono:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="End"/>
+            <Entry Text="{Binding Cliente.Telefono}" Grid.Row="4" Grid.Column="1" Placeholder="Ingrese el teléfono del cliente" />
+        </Grid>
+
+        <Button Text="Guardar" Command="{Binding GuardarCommand}" />
+        <Button Text="Cancelar" Command="{Binding CancelarCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RotiNet.ViewModels"
+             x:Class="RotiNet.View.Clientes.ClienteView"
+             Title="ClienteView">
+    <ContentPage.BindingContext>
+        <viewmodels:ClientesViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label 
+              Text="Lista de Clientes"
+              FontSize="Header"
+              VerticalOptions="Start"
+              HorizontalOptions="Center" />
+
+            <ActivityIndicator IsRunning="{Binding ActivityStart}" />
+
+            <CollectionView x:Name="clientesCollectionView"
+                          ItemsSource="{Binding Clientes}"
+                          SelectedItem="{Binding ClienteCurrent, Mode=TwoWay}"
+                          SelectionMode="Single"
+                          VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnDefinitions="*,*,*,*">
+                            <Label Text="{Binding Nombre}" Grid.Column="0" />
+                            <Label Text="{Binding Direccion}" Grid.Column="1" />
+                            <Label Text="{Binding Telefono}" Grid.Column="2" />
+                            <Label Text="{Binding Email}" Grid.Column="3" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Agregar" WidthRequest="150"
+                    Command="{Binding AgregarCommand}" />
+            <Button Text="Editar" WidthRequest="150"
+                    Command="{Binding EditarCommand}" />
+            <Button Text="Eliminar" WidthRequest="150"
+                    Command="{Binding EliminarCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
