@@ -20,7 +20,7 @@
 
             <Button
              x:Name="BtnClientes"
-             Text="Clintes" 
+             Text="Clientes" 
              SemanticProperties.Hint="Counts the number of times you click"
              Clicked="BtnClientes_Clicked"
              HorizontalOptions="Fill" />    

@@ -25,14 +25,14 @@ namespace RotiNet
             {
                 await Navigation.PushAsync(new AddEditClienteView(m.Cliente));
             }
-            //if (m.Value == "AbrirCarreras")
-            //{
-            //    await Navigation.PushAsync(new CarrerasView());
-            //}
-            //if (m.Value == "VolverACarreras")
-            //{
-            //    await Navigation.PopAsync();
-            //}
+            if (m.Value == "AbrirClientes")
+            {
+                await Navigation.PushAsync(new ClienteView());
+            }
+            if (m.Value == "VolverAClientes")
+            {
+                await Navigation.PopAsync();
+            }
         }
 
 

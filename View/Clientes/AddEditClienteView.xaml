@@ -14,9 +14,6 @@
             <Label Text="Nombre:" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="End"/>
             <Entry Text="{Binding Cliente.Nombre}" Grid.Row="0" Grid.Column="1" Placeholder="Ingrese el nombre del cliente" />
 
-            <Label Text="Apellido:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="End"/>
-            <Entry Text="{Binding Cliente.Apellido}" Grid.Row="1" Grid.Column="1" Placeholder="Ingrese el apellido del cliente" />
-
             <Label Text="Dirección:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="End"/>
             <Entry Text="{Binding Cliente.Direccion}" Grid.Row="2" Grid.Column="1" Placeholder="Ingrese la dirección del cliente" />
 
